@@ -1,2 +1,4 @@
 pycodestyle
-pytest
+pytest~=7.1.3
+
+PyYAML~=6.0

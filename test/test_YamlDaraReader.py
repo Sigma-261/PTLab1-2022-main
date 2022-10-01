@@ -6,14 +6,16 @@ from src.Types import DataType
 from src.YamlDataReader import YamlDataReader
 
 
-class YamlTextDataReader:
+class TestYamlDataReader:
 
     @pytest.fixture()
     def file_and_data_content(self) -> Tuple[str, DataType]:
-        text = "Иванов Константин Дмитриевич\n" + \
-               "    математика:91\n" + "    химия:100\n" + \
-               "Петров Петр Семенович\n" + \
-               "    русский язык:87\n" + "    литература:78\n"
+        text = "- Иванов Константин Дмитриевич:\n" + \
+               "    математика: 91\n" + \
+               "    химия: 100\n" + \
+               "- Петров Петр Семенович:\n" + \
+               "    русский язык: 87\n" +\
+               "    литература: 78\n"
 
         data = {
             "Иванов Константин Дмитриевич": [
@@ -29,7 +31,7 @@ class YamlTextDataReader:
     def filepath_and_data(self,
                           file_and_data_content: Tuple[str, DataType],
                           tmpdir) -> Tuple[str, DataType]:
-        p = tmpdir.mkdir("datadir").join("my_data.txt")
+        p = tmpdir.mkdir("datadir").join("my_data.yaml")
         p.write_text(file_and_data_content[0], encoding='utf-8')
         return str(p), file_and_data_content[1]
 

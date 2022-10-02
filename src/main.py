@@ -5,6 +5,7 @@ import sys
 from CalcRating import CalcRating
 from TextDataReader import TextDataReader
 from YamlDataReader import YamlDataReader
+from NewCalcRating import NewCalcRating
 
 
 def get_path_from_arguments(args) -> str:
@@ -24,7 +25,8 @@ def main():
     print("Students: ", students)
 
     # rating = CalcRating(students).calc()
-    # print("Rating: ", rating)
+    rating = NewCalcRating(students).calc()
+    print("Rating: ", rating)
 
 
 if __name__ == "__main__":

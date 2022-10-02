@@ -36,8 +36,10 @@ class NewCalcRating:
                 q3_rating[key] = self.rating[key]
             elif self.rating[key] < median:
                 q1_rating[key] = self.rating[key]
-        q3 = calc_median(amount=len(q3_rating), rating=list(q3_rating.values()))
-        q1 = calc_median(amount=len(q1_rating), rating=list(q1_rating.values()))
+        q3 = calc_median(amount=len(q3_rating),
+                         rating=list(q3_rating.values()))
+        q1 = calc_median(amount=len(q1_rating),
+                         rating=list(q1_rating.values()))
         for key in self.data:
             if q1 < self.rating[key] < q3:
                 q2_rating[key] = self.rating[key]

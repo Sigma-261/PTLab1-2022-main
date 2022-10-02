@@ -19,5 +19,3 @@ class CalcRating:
                 self.rating[key] += subject[1]
             self.rating[key] /= len(self.data[key])
         return self.rating
-
-
